@@ -1,0 +1,9 @@
+[
+  {"organization":"SSC","url":"https://ssc.gov.in/","enabled":true,"type":"official","parser":"SSCParser"},
+  {"organization":"UPSC","url":"https://www.upsc.gov.in/","enabled":true,"type":"official","parser":"UPSCParser"},
+  {"organization":"IBPS","url":"https://www.ibps.in/","enabled":true,"type":"official","parser":"IBPSParser"},
+  {"organization":"SBI Careers","url":"https://sbi.co.in/web/careers","enabled":true,"type":"official","parser":"GenericParser"},
+  {"organization":"Railway Recruitment","url":"https://indianrailways.gov.in/","enabled":true,"type":"official","parser":"RailwayParser"},
+  {"organization":"NTA","url":"https://www.nta.ac.in/","enabled":true,"type":"official","parser":"GenericParser"},
+  {"organization":"HSSC","url":"https://hssc.gov.in/","enabled":true,"type":"official","parser":"GenericParser"}
+]
