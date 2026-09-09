@@ -1,0 +1,19 @@
+{
+  "name": "examconnect",
+  "version": "1.0.0",
+  "description": "Government exam eligibility and notification portal with automated official-source ingestion.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test tests/eligibility.test.js",
+    "update-exams": "node scripts/update-exams.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^5.1.0"
+  }
+}
