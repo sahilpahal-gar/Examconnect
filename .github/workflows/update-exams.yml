@@ -1,0 +1,36 @@
+name: Update exam notifications
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Fetch and normalize official notifications
+        run: npm run update-exams
+      - name: Commit changed dataset
+        run: |
+          if git diff --quiet -- server/data/exams.json; then
+            echo "No exam-data changes detected."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add server/data/exams.json
+            git commit -m "chore: update exam notifications"
+            git push
+          fi
